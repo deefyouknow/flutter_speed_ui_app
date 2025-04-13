@@ -52,16 +52,31 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - images
+    - images/
   fonts:
-    - family: Kanit  # ชื่อฟอนต์ที่จะใช้อ้างอิง
+    - family: Kanit
+      fonts:
+    - family: Kanit
+      fonts:
+        - asset: assets/fonts/Kanit-Regular.ttf
+        - asset: assets/fonts/Kanit-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Kanit-Light.ttf
+          weight: 300
     - family: Inter
       fonts:
-        - asset: fonts/Kanit-Regular.ttf
-        - asset: fonts/Kanit-Bold.ttf
-        - asset: fonts/Kanit-Light.ttf
-        - asset: Inter_18pt-Bold.ttf
-        - asset: Inter_28pt-Regular.ttf
+        - asset: assets/fonts/Inter_18pt-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter_28pt-Regular.ttf
+          weight: 400
+    - family: Outfit
+      fonts:
+        - asset: assets/fonts/Outfit-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Outfit-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Outfit-Regular.ttf
+          weight: 400
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -1,5 +1,6 @@
 //(HomeUI)
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_ui_app/view/a01_page_ui.dart';
 
 class HomeUi extends StatefulWidget {
   const HomeUi({super.key});
@@ -23,7 +24,7 @@ class _HomeUiState extends State<HomeUi> {
         behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(top: 75, bottom: 24, left: 4, right: 4),
+            padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05, bottom: 24, left: 4, right: 4),
             child: Column(
               children: [
                 logo1(),
@@ -65,10 +66,14 @@ class _HomeUiState extends State<HomeUi> {
             borderRadius: BorderRadius.circular(10), // ปรับความโค้งของมุม
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, 
+          MaterialPageRoute(builder: (context) => A01PageUi()),
+          );
+        },
         child: Text(
           'Go To A Page',
-          style: TextStyle(color: Colors.white, fontFamily: 'Inter'),
+          style: TextStyle(color: Colors.white, fontFamily: 'Inner'),
         ),
       ),
     );
