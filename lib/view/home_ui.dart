@@ -20,26 +20,39 @@ class _HomeUiState extends State<HomeUi> {
       behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
       child: SingleChildScrollView(),  
       */
-      body: ScrollConfiguration(
-        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05, bottom: 24, left: 4, right: 4),
-            child: Column(
-              children: [
-                logo1(),
-                SizedBox(height: 24),
-                go_to_a_page(),
-                go_to_b_page(),
-                go_to_C_page(),
-                go_to_d_page(),
-                go_to_e_page(),
-              ],
+      body: Stack(
+        children: [
+          Padding(padding: EdgeInsets.only(
+            top: 20,
+            bottom: 10,
+          ),
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Expanded(child: 
+                Column(
+                  children: [
+                    logo1(),
+                    Expanded(child: 
+                      SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            go_to_a_page(),
+                            go_to_b_page(),
+                            go_to_C_page(),
+                            go_to_d_page(),
+                            go_to_e_page(),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
-        ),
+        ],
       ),
-    );
+    );   
   }
 
   Container logo1() {

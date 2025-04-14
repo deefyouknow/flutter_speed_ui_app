@@ -12,166 +12,249 @@ class _A02PageUiState extends State<A02PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       body: Stack(
+        alignment: Alignment.topCenter,
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: 2, left: 2, right: 2),
-            child: Column(
-              children: [
-                Expanded(child: Logo1()),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.02,
-                  child: FractionallySizedBox(heightFactor: 0.5),
-                ),
-                Expanded(child: SingleChildScrollView(child: Text_1())),
-              ],
+          Expanded(
+            child: SingleChildScrollView(
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Padding(padding: EdgeInsets.all(16), child: body_1()),
+              ),
             ),
           ),
         ],
       ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.only(),
-        child: Expanded(child: Button_1()),
+    );
+  }
+
+  //program
+  Container body_1() {
+    return Container(
+      color: Colors.amber,
+      padding: EdgeInsets.only(top: 10),
+      width: 390,
+      height: 9000,
+      child: Column(
+        children: [
+          layout1(),
+          layout2(),
+          box_height(20, 0.04, context),
+          layoutTextBox1(),
+          Orsigwith(),
+        ],
       ),
     );
   }
 
-  Container Logo1() {
-    return Container(
-      //width: 372,
-      //height: 463,
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 248, 154, 238),
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(50),
-          bottomRight: Radius.circular(50),
+  // Welcomback text function
+  SizedBox layout1() {
+    return SizedBox(
+      // set layout color
+      width: 300,
+      child: ColoredBox(
+        color: Colors.greenAccent,
+        child: Expanded(
+          child: Text(
+            'Welcome Back',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
-      child: Image.asset('images/a/imga1.png', width: 434),
     );
   }
 
-  Container Text_1() {
+  SizedBox layout2() {
+    return SizedBox(
+      width: 340,
+      child: ColoredBox(
+        color: Colors.blueAccent,
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: Expanded(
+            child: Text(
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam maecenas mi non sed ut odio. Non, justo, sed facilisi et.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontFamily: 'Outfit', fontSize: 13),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  // space with box function
+  Widget box_height(double width, double height, BuildContext context) {
+    return ColoredBox(
+      color: Colors.white,
+      child: SizedBox(
+        width: width,
+        height: MediaQuery.of(context).size.height * height,
+        child: FractionallySizedBox(heightFactor: 0.5),
+      ),
+    );
+  }
+
+  //box textfield
+  SizedBox layoutTextBox1() {
+    return SizedBox(
+      width: 400,
+      child: ColoredBox(
+        color: Colors.pinkAccent,
+        child: Expanded(
+          child: Column(
+            children: [
+              Container(
+                width: 339,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 243, 243, 243),
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                ),
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(
+                        color: const Color.fromARGB(255, 250, 250, 250),
+                      ),
+                    ),
+                    labelText: 'Username , Email & Phone Number',
+                    labelStyle: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+              box_height(200, 0.02, context),
+              Container(
+                width: 339,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 243, 243, 243),
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                ),
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    labelText: 'PassWord',
+                    labelStyle: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+              // forget password
+              ColoredBox(
+                color: Colors.blueAccent,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: TextButton.icon(
+                      onPressed: () {},
+                      label: Text(
+                        'Forget Password ?',
+                        textAlign: TextAlign.end,
+                        style: TextStyle(fontFamily: 'Outfit'),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              box_height(400, 0.1, context),
+              SizedBox(
+                width: 359,
+                height: 59,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    backgroundColor: const Color.fromARGB(255, 248, 154, 238),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    'Sign in',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: const Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  //row
+  Container Orsigwith() {
     return Container(
       alignment: Alignment.topCenter,
-      child: Align(
-        child: Column(
-          children: [
-            Text(
-              'Discover Your',
-              textAlign: TextAlign.center, // ข้อความตรงกลาง
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'Own Dream House',
-              textAlign: TextAlign.center, // ข้อความตรงกลาง
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            //
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-              child: FractionallySizedBox(heightFactor: 0.5),
-            ),
-            Container(
-              padding: EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    textAlign: TextAlign.center, // ข้อความตรงกลาง
-                    style: TextStyle(fontFamily: 'Outfit', fontSize: 13),
-                  ),
-                  Text(
-                    'Diam maecenas mi non sed ut odio. Non, justo, sed facilisi',
-                    textAlign: TextAlign.center, // ข้อความตรงกลาง
-                    style: TextStyle(fontFamily: 'Outfit', fontSize: 13),
-                  ),
-                  Text(
-                    'et. Eget viverra urna, vestibulum egestas faucibus',
-                    textAlign: TextAlign.center, // ข้อความตรงกลาง
-                    style: TextStyle(fontFamily: 'Outfit', fontSize: 13),
-                  ),
-                  Text(
-                    ' egestas. Sagittis nam velit volutpat eu nunc.',
-                    textAlign: TextAlign.center, // ข้อความตรงกลาง
-                    style: TextStyle(fontFamily: 'Outfit', fontSize: 13),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Container Button_1() {
-    return Container(
-      padding: EdgeInsets.only(top: 20, right: 20),
-      //margin: EdgeInsets.only(left: 20, right: 20),
-      child: Row(
+      padding: EdgeInsets.all(0),
+      color: Colors.deepPurpleAccent,
+      height: 600,
+      width: double.infinity,
+      child: Column(
         children: [
-          Expanded(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.all(20),
-                backgroundColor: const Color.fromARGB(255, 248, 154, 238),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    bottomLeft: Radius.circular(15),
+          box_height(0, 0.03, context),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 3,
+                  width: 132,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment(0.8, 1),
+                      colors: <Color>[
+                        Color.fromARGB(255, 196, 196, 196),
+                        Color.fromARGB(255, 247, 153, 238),
+                      ],
+                      tileMode: TileMode.mirror,
+                    ),
                   ),
                 ),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => A02PageUi()),
-                );
-              },
-              child: Text(
-                'Sing in',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 22,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.all(20),
-                backgroundColor: const Color.fromARGB(255, 243, 243, 243),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(15),
-                    bottomRight: Radius.circular(15),
+                Text('Or Sign up With'),
+                Container(
+                  height: 3,
+                  width: 132,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment(0.8, 1),
+                      colors: <Color>[
+                        Color.fromARGB(255, 196, 196, 196),
+                        Color.fromARGB(255, 247, 153, 238),
+                      ],
+                      tileMode: TileMode.mirror,
+                    ),
                   ),
                 ),
-              ),
-              onPressed: () {},
-              child: Text(
-                'Sign in',
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 84, 81, 81),
-                  fontFamily: 'Outfit',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
-                ),
-              ),
+              ],
             ),
           ),
+          Row(),
         ],
       ),
     );
