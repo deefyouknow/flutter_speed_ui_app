@@ -1,6 +1,7 @@
 // (A01PageUI)
 import 'package:flutter/material.dart';
-
+// Widget for A01 Page
+// Last updated: 20 April 2025
 class A02PageUi extends StatefulWidget {
   const A02PageUi({super.key});
 
@@ -12,7 +13,7 @@ class _A02PageUiState extends State<A02PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -32,10 +33,10 @@ class _A02PageUiState extends State<A02PageUi> {
   //program
   Container body_1() {
     return Container(
-      color: Colors.amber,
+      color: const Color.fromARGB(255, 255, 255, 255),
       padding: EdgeInsets.only(top: 10),
-      width: 390,
-      height: 9000,
+      width: MediaQuery.of(context).size.width * 0.85,
+      //height: 9000,
       child: Column(
         children: [
           layout1(),
@@ -43,6 +44,7 @@ class _A02PageUiState extends State<A02PageUi> {
           box_height(20, 0.04, context),
           layoutTextBox1(),
           Orsigwith(),
+          icon_social(),
         ],
       ),
     );
@@ -54,7 +56,7 @@ class _A02PageUiState extends State<A02PageUi> {
       // set layout color
       width: 300,
       child: ColoredBox(
-        color: Colors.greenAccent,
+        color: const Color.fromARGB(255, 255, 255, 255),
         child: Expanded(
           child: Text(
             'Welcome Back',
@@ -74,7 +76,7 @@ class _A02PageUiState extends State<A02PageUi> {
     return SizedBox(
       width: 340,
       child: ColoredBox(
-        color: Colors.blueAccent,
+        color: const Color.fromARGB(255, 255, 255, 255),
         child: Align(
           alignment: Alignment.topCenter,
           child: Expanded(
@@ -106,59 +108,76 @@ class _A02PageUiState extends State<A02PageUi> {
     return SizedBox(
       width: 400,
       child: ColoredBox(
-        color: Colors.pinkAccent,
+        color: const Color.fromARGB(255, 255, 255, 255),
         child: Expanded(
           child: Column(
             children: [
               Container(
                 width: 339,
+                //height: 55,
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 243, 243, 243),
                   borderRadius: BorderRadius.all(Radius.circular(15)),
                 ),
+                alignment: Alignment.center,
                 child: TextField(
-                  obscureText: true,
+                  obscureText: false,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15,
+                    color: Colors.black,
+                  ),
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 250, 250, 250),
-                      ),
-                    ),
-                    labelText: 'Username , Email & Phone Number',
-                    labelStyle: TextStyle(
+                    border: InputBorder.none,
+                    hintText: 'Username, Email & Phone Number',
+                    hintStyle: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 15,
-                      color: Colors.black,
+                      color: Colors.black.withOpacity(0.5), // สีเบากว่านิดนึง
                     ),
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 16, //ข้อความอยู่กลางกล่อง
+                    ),
+                    isCollapsed: true, //ไม่ให้กินพื้นที่มากเกิน
                   ),
                 ),
               ),
               box_height(200, 0.02, context),
               Container(
-                width: 339,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 243, 243, 243),
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                ),
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                    ),
-                    labelText: 'PassWord',
-                    labelStyle: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
+            width: 339,
+            //height: 55,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 243, 243, 243),
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+            ),
+            alignment: Alignment.center,
+            child: TextField(
+              obscureText: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15,
+                color: Colors.black,
               ),
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: 'PassWord',
+                hintStyle: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15,
+                  color: Colors.black.withOpacity(0.5), // สีเบากว่านิดนึง
+                ),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 16, //ข้อความอยู่กลางกล่อง
+                ),
+                isCollapsed: true, //ไม่ให้กินพื้นที่มากเกิน
+              ),
+            ),
+          ),
               // forget password
               ColoredBox(
-                color: Colors.blueAccent,
+                color: const Color.fromARGB(255, 255, 255, 255),
                 child: SizedBox(
                   width: double.infinity,
                   child: Align(
@@ -174,7 +193,7 @@ class _A02PageUiState extends State<A02PageUi> {
                   ),
                 ),
               ),
-              box_height(400, 0.1, context),
+              box_height(400, 0.05, context),
               SizedBox(
                 width: 359,
                 height: 59,
@@ -209,8 +228,8 @@ class _A02PageUiState extends State<A02PageUi> {
     return Container(
       alignment: Alignment.topCenter,
       padding: EdgeInsets.all(0),
-      color: Colors.deepPurpleAccent,
-      height: 600,
+      color: const Color.fromARGB(255, 255, 255, 255),
+      height: 70,
       width: double.infinity,
       child: Column(
         children: [
@@ -222,30 +241,34 @@ class _A02PageUiState extends State<A02PageUi> {
               children: [
                 Container(
                   height: 3,
-                  width: 132,
+                  width: 100,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment(0.8, 1),
                       colors: <Color>[
-                        Color.fromARGB(255, 196, 196, 196),
+                        Color.fromARGB(255, 255, 255, 255),
+                        // Color.fromARGB(255, 196, 196, 196),
                         Color.fromARGB(255, 247, 153, 238),
                       ],
                       tileMode: TileMode.mirror,
                     ),
                   ),
                 ),
+                box_height(7, 0.01, context),
                 Text('Or Sign up With'),
+                box_height(7, 0.01, context),
                 Container(
                   height: 3,
-                  width: 132,
+                  width: 100,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment(0.8, 1),
                       colors: <Color>[
-                        Color.fromARGB(255, 196, 196, 196),
                         Color.fromARGB(255, 247, 153, 238),
+                        // Color.fromARGB(255, 196, 196, 196),
+                        Color.fromARGB(255, 255, 255, 255),
                       ],
                       tileMode: TileMode.mirror,
                     ),
@@ -256,6 +279,54 @@ class _A02PageUiState extends State<A02PageUi> {
           ),
           Row(),
         ],
+      ),
+    );
+  }
+
+  //icon
+  ColoredBox icon_social() {
+    return ColoredBox(
+      color: const Color.fromARGB(255, 255, 255, 255),
+      child: SizedBox(
+        //width: 400,
+        height: 100,
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 54,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: const Color.fromARGB(255, 248, 154, 238)),
+                  color: const Color.fromARGB(255, 236, 233, 236),
+                ),
+                child: Image.asset('images/a/imga2.png', width: 30),
+              ),
+              SizedBox(width: 10),
+              Container(
+                width: 54,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: const Color.fromARGB(255, 248, 154, 238)),
+                  color: const Color.fromARGB(255, 236, 233, 236),
+                ),
+                child: Image.asset('images/a/imga3.png', width: 30),
+              ),
+              SizedBox(width: 10),
+              Container(
+                width: 54,
+                decoration: BoxDecoration(
+                  border: Border.all(color: const Color.fromARGB(255, 248, 154, 238)),
+                  shape: BoxShape.circle,
+                  color: const Color.fromARGB(255, 236, 233, 236),
+                ),
+                child: Image.asset('images/a/imga4.png', width: 30),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

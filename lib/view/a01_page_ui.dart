@@ -1,7 +1,8 @@
 // (A01PageUI)
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_ui_app/view/a02_page_ui.dart';
-
+// Widget for A01 Page
+// Last updated: 20 April 2025
 class A01PageUi extends StatefulWidget {
   const A01PageUi({super.key});
 
@@ -36,7 +37,7 @@ class _A01PageUiState extends State<A01PageUi> {
       ),
     );
   }
-
+//aaa
   Container Logo1() {
     return Container(
       //width: 372,
@@ -113,7 +114,7 @@ class _A01PageUiState extends State<A01PageUi> {
       ),
     );
   }
-
+  
   Container Button_1() {
     return Container(
       //padding: EdgeInsets.only(top: 15, right: 20),
