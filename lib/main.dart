@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_speed_ui_app/view/a02_page_ui.dart';
-import 'package:flutter_speed_ui_app/view/home_ui.dart';
 import 'package:flutter_speed_ui_app/view/a01_page_ui.dart';
+import 'package:flutter_speed_ui_app/view/a02_page_ui.dart';
+import 'package:flutter_speed_ui_app/view/b01_page_ui.dart';
+import 'package:flutter_speed_ui_app/view/home_ui.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //home: HomeUi(),
       //home: A01PageUi(),
-      home: A02PageUi(),
+      home: B01PageUi(),
     );
   }
   Widget homeii() {
