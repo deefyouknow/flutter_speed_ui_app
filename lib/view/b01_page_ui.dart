@@ -1,6 +1,5 @@
 //b01_page_ui
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_speed_ui_app/view/widget_deef.dart';
 // Widget for A01 Page
 // Last updated: 21 April 2025
@@ -15,7 +14,7 @@ class _B01PageUiState extends State<B01PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: const Color.fromARGB(255, 253, 253, 253),
       body: Align(
         alignment: Alignment.topCenter,
         child: SingleChildScrollView(

@@ -1,13 +1,14 @@
 //all widget
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_ui_app/view/b02_page_ui.dart';
 
 //logoB01 b01_page_ui.dart
 ColoredBox logoB01() {
   return ColoredBox(
-    color: Colors.black,
+    color: const Color.fromARGB(255, 255, 255, 255),
     child: Container(
-      child: Image.asset('images/b/imgb1.png'),
       margin: EdgeInsets.all(16),
+      child: Image.asset('images/b/imgb1.png'),
     ),
   );
 }
@@ -123,3 +124,5 @@ Container button_b01page() {
     ),
   );
 }
+
+//b b02_page
